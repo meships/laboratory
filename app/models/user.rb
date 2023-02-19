@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
     #日報閲覧許可
     has_many :report_deliveries
+    has_many :delivered_reports, through: :report_deliveries, source: :daily_report
 
     validates :name,  presence: true, length: { maximum: 30 }
     validates :email, presence: true, length: { maximum: 255 },
