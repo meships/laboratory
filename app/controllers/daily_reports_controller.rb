@@ -22,6 +22,9 @@ class DailyReportsController < ApplicationController
 
   def show
     @daily_report = DailyReport.find(params[:id])
+    #日報閲覧許可
+    @users = User.all
+    @report_delivery = ReportDelivery.new
   end
 
   def edit
@@ -64,4 +67,5 @@ class DailyReportsController < ApplicationController
   def login_required
     redirect_to new_session_path unless current_user
   end
+
 end

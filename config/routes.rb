@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root "daily_reports#index"
   resources :daily_reports do
-    resources :report_deliveries, only: [:create]
+    resources :report_deliveries
     resources :photos do
       resources :photo_comments
     end    

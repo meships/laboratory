@@ -3,7 +3,7 @@ class User < ApplicationRecord
     before_update :admin_not_update
     has_many :daily_reports, dependent: :destroy
 
-    
+    #日報閲覧許可
     has_many :report_deliveries
 
     validates :name,  presence: true, length: { maximum: 30 }
